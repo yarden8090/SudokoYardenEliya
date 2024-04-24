@@ -1,5 +1,5 @@
 .hidden{
-    display: none;
+    visibility:hidden;
 }
 
 body{
@@ -45,21 +45,32 @@ p#timer, p#lives{
     width: 60px;
     height: 60px;
     font-size:40pt;
-    margin-left: 50px;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align:center;
 }
 
+#number-container {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1; /* כדי להציב את התיבת מספרים מעל ללוח המשחק */
+}
+
 #board {
-    padding-top: 10px;
+    padding-top: 40px; /* כדי להוסיף מרווח בין התיבת מספרים ללוח המשחק */
     margin-top: 10px;
-    display :flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-content: flext-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
     width: 600px;
-    height :600px;
+    height: 600px;
+    position: relative; /* אנו משתמשים ב-position: relative כדי לאפשר ל-number-container לשנות עליו */
 }
 
 .tile{

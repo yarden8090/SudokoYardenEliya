@@ -34,14 +34,14 @@ function startGame() {
   disableSelect = false;
   id("lives").textContent = "Lives Remaining: 3";
   generateBoard(board);
-  // start the timer
-  startTimer();
   // show number container
   id("number-container").classList.remove("hidden");
+  // start the timer
+  startTimer();
 }
 
 function startTimer(){
-    timerRemaining = 600;
+    timerRemaining = 10;
     id("timer").textContent = timeConversion(timerRemaining);
     //set timer to update every second
     timer = setInterval(function(){
@@ -60,7 +60,17 @@ function timeConversion(time){
   return minutes + ":" + seconds;
 }
 
-
+function endGame(){
+  //disable moves and stop the timer
+  disableSelect = true;
+  clearTimeout(timer);
+  //display win or loss message
+  if(lives === 0 || timerRemaining === 0){
+    id("lives").textContent = "You Lost!";
+  } else {
+    id("lives").textContent = "You Won!";
+  }
+}
 
 function generateBoard(board){
   //clear previous board
