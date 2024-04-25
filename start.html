@@ -1,41 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sudoko - Y&E</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
     <link rel="stylesheet" href="style.css">
-    <script src="game.js"></script>
 </head>
-<header>
-    <h1>Sudoku</h1>
-        <label for="difficulty">Select difficulty:</label>
-            <select name="difficulty" id="difficulty">
-                <option value="easy" id="diff-1">Easy</option>
-                <option value="medium" id="diff-2">Medium</option>
-                <option value="hard" id="diff-3">Hard</option>
-            </select>
-            <div id = "start">
-                <button id="start-btn">Start Game</button>
-            </div>
-</header>
 <body>
-        <div id="status">
-            <p id="timer"></p>
-            <p id="lives"></p>
+    <header>
+        <h1>Sudoku Game
+            <img src="images/infoIcon.png" height="40" size="40" alt="info" onclick="info()"> 
+        </h1>
+        <label for="difficulty">Select difficulty:</label>
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <div id="start">
+            <button id="start-btn">Start Game</button>
         </div>
+    </header>
 
-        <div id= "game">
-            <div id="board"></div>
-            <div id="number-container" class="hidden">
-                <p id="one">1</p>
-                <p id="two">2</p>
-                <p id="three">3</p>
-                <p id="four">4</p>
-                <p id="five">5</p>
-                <p id="six">6</p>
-                <p id="seven">7</p>
-                <p id="eight">8</p>
-                <p id="nine">9</p>
-            </div>
+    <div>
+        <p id="timer"></p>
+        <p id="lives"></p>
+    </div>
+
+    <div id="game">
+        <div id="number-container" class="hidden">
+            <p id="one">1</p>
+            <p id="two">2</p>
+            <p id="three">3</p>
+            <p id="four">4</p>
+            <p id="five">5</p>
+            <p id="six">6</p>
+            <p id="seven">7</p>
+            <p id="eight">8</p>
+            <p id="nine">9</p>
         </div>
-        </body>
+        <div id="board"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
 </html>

@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+:root {
+    --Purples: Rocher;
+}
+
+h1 {
+    font-size: 25pt;
+    margin: 0;
+    font-family: var(--Purples);
+    text-align: center;
+}
+
+p{
+    font-size: 20px;
+    text-align: center;
+    color: blueviolet;
+}
