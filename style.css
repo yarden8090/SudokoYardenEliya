@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: #ffffff;
+    background-color: rgba(137, 43, 226, 0.408);
     text-align: center;
     font-family: Arial, sans-serif;
 }
@@ -24,27 +24,26 @@ header{
 }
 
 h1 {
-    font-size: 25pt;
+    font-size: 40pt;
     margin: 0;
     font-family: var(--Purples);
 }
 
 label{
-    font-size: 10pt;
+    font-size: 18pt;
 }
 
 option{
-    color:black;
-}
-
-button{
-    justify-self: center;
+    color:blueviolet;
+    font-size:medium;
+    background-color:antiquewhite;
 }
 
 p#timer, p#lives{
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     text-align:center;
+    color:antiquewhite;
 }
 
 #game{
@@ -53,14 +52,15 @@ p#timer, p#lives{
 }
 
 #number-container>p{
-    border: 1px solid black;
-    border-radius:20%;
+    border: 2.5px solid black;
+    border-radius:30%;
     width: 60px;
     height: 60px;
-    font-size:40pt;
+    font-size:37pt;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align:center;
+    font-family: var(--Purples);
 }
 
 #number-container {
@@ -111,4 +111,14 @@ p.incorrect{
     border-bottom: 4px solid black;
 }
 
-
+button{
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 5px;
+    color:blueviolet;
+    justify-self: center;
+}

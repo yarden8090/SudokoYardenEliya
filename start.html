@@ -8,10 +8,12 @@
 </head>
 <body>
     <header>
-        <h1>Eliya</h1>
         <h1>Sudoku Game
-            <img src="images/infoIcon.png" height="40" size="40" alt="info" onclick="info()"> 
+            <a href="images/popUpinfo.jpeg">
+                <img src="images/infoIcon.png" style="width: 40px; height: 40px;">
+            </a>  
         </h1>
+        
         <label for="difficulty">Select difficulty:</label>
         <select id="difficulty">
             <option value="easy">Easy</option>
@@ -24,9 +26,10 @@
     </header>
 
     <div>
-        <p id="timer"></p>
-        <p id="lives"></p>
+        <p id="timer" style="display: inline;"></p> <br>
+        <p id="lives" style="display: inline;"></p>
     </div>
+    
 
     <div id="game">
         <div id="number-container" class="hidden">

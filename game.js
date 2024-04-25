@@ -14,12 +14,6 @@ const hard = [
 // Create Variables
 let timer, timerRemaining, lives, selectedNum, selectedTile, disableSelect;
 
-function info(){
-  pop = window.open("images/popUpinfo.jpeg","infoPage","height=500,width=250");
-if (window.focus) {pop.focus()}
-return false;
-}
-
 window.onload = function(){
   // Run startGame function when button is clicked
   document.getElementById("start-btn").addEventListener("click", startGame);
