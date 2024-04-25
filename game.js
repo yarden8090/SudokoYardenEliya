@@ -14,6 +14,13 @@ const hard = [
 // Create Variables
 let timer, timerRemaining, lives, selectedNum, selectedTile, disableSelect;
 
+function deleteNum() {
+  let selectedNumId = selectedNum.id;
+  let selectedNumToRemove = document.getElementById(selectedNumId);
+  selectedNumToRemove.style.display = "none";
+  //alert("deleted");
+}
+
 window.onload = function(){
   // Run startGame function when button is clicked
   document.getElementById("start-btn").addEventListener("click", startGame);
@@ -44,8 +51,11 @@ window.onload = function(){
 };
 
 function startGame(){
-  // Choose board difficulty
+  for (let i = 0; i < 9; i++) {
+    document.getElementById("number-container").children[i].style.display="block";
+  }
   let board;
+  // Choose board difficulty
   let selectedIndex = document.getElementById("difficulty").selectedIndex;
   if(selectedIndex === 0) board = easy[0];
   else if(selectedIndex === 1) board = medium[0];
@@ -162,6 +172,10 @@ function updateMove(){
       selectedTile.textContent = selectedNum.textContent;
       // If the number matches the solution
       if(checkCorrect(selectedTile)){
+            //check if selectedNum is not rellevent anymore
+          if (!stillRelevant(selectedNum)) {
+            deleteNum();
+          }
           // Deselect the tile
           selectedTile.classList.remove("selected");
           selectedNum.classList.remove("selected");
@@ -203,6 +217,20 @@ function updateMove(){
           }, 1000);
       }
   }
+}
+
+function stillRelevant(number) {
+  let tiles = document.querySelectorAll(".tile");
+  let count = 0;
+  // Count how many times the number appears in the board
+  for (let i = 0; i < tiles.length; i++) {
+    if (tiles[i].textContent === number.textContent) {
+      count++;
+    }
+  }
+  //alert(count);
+  // Check if the number appears 9 times in the board
+  return count < 9;
 }
 
 function checkCorrect(tile){
