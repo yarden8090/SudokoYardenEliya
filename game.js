@@ -51,6 +51,7 @@ window.onload = function(){
 };
 
 function startGame(){
+  document.getElementById("solver").style.display="inline-block";
   for (let i = 0; i < 9; i++) {
     document.getElementById("number-container").children[i].style.display="block";
   }
@@ -262,4 +263,38 @@ function clearPrevious(){
   // Clear selected variables
   selectedTile = null;
   selectedNum = null;
+}
+
+function solver(){
+  if(document.getElementById("solver").textContent === "hide again"){
+      document.getElementById("solver").textContent = "show solution";
+      let tiles = document.querySelectorAll(".tile");
+      for(let i = 0; i < tiles.length; i++){
+          if(tiles[i].classList.contains("correct")){
+              tiles[i].textContent = "";
+              tiles[i].classList.remove("correct");
+          }
+      }
+      document.getElementById("solver").textContent = "show solution";
+      return;
+  }else{
+      document.getElementById("solver").textContent = "hide again";
+      let tiles = document.querySelectorAll(".tile");
+      let board = "";
+      for(let i = 0; i < tiles.length; i++){
+          if(tiles[i].textContent === "") board += "-";
+          else board += tiles[i].textContent;
+      }
+      let solution;
+      let selectedIndex = document.getElementById("difficulty").selectedIndex;
+      if(selectedIndex === 0) solution = easy[1];
+      else if(selectedIndex === 1) solution = medium[1];
+      else solution = hard[1];
+      for(let i = 0; i < solution.length; i++){
+          if(solution.charAt(i) !== board.charAt(i)){
+              tiles[i].textContent = solution.charAt(i);
+              tiles[i].classList.add("correct");
+          }
+      }
+  }
 }
